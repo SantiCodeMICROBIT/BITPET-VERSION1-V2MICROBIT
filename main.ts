@@ -39,6 +39,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Asleep)
 })
 input.onGesture(Gesture.TiltLeft, function () {
+    music.stopAllSounds()
     basic.showLeds(`
         . . . . .
         # . # . .
@@ -119,6 +120,7 @@ input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Asleep)
 })
 input.onGesture(Gesture.TiltRight, function () {
+    music.stopAllSounds()
     basic.showLeds(`
         . . . . .
         . . # . #
