@@ -38,6 +38,19 @@ input.onButtonPressed(Button.A, function () {
     music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
     basic.showIcon(IconNames.Asleep)
 })
+input.onGesture(Gesture.TiltLeft, function () {
+    basic.showLeds(`
+        . . . . .
+        # . # . .
+        . . . . .
+        # # # . .
+        . . . # .
+        `)
+    music.playSoundEffect(music.builtinSoundEffect(soundExpression.slide), SoundExpressionPlayMode.UntilDone)
+    fun += -1
+    music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
+    basic.showIcon(IconNames.Asleep)
+})
 input.onGesture(Gesture.ScreenDown, function () {
     music.stopAllSounds()
     basic.showLeds(`
@@ -101,6 +114,19 @@ input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Angry)
     soundExpression.sad.playUntilDone()
     hunger += -1
+    fun += -1
+    music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
+    basic.showIcon(IconNames.Asleep)
+})
+input.onGesture(Gesture.TiltRight, function () {
+    basic.showLeds(`
+        . . . . .
+        . . # . #
+        . . . . .
+        . . # # #
+        . # . . .
+        `)
+    music.playSoundEffect(music.builtinSoundEffect(soundExpression.slide), SoundExpressionPlayMode.UntilDone)
     fun += -1
     music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
     basic.showIcon(IconNames.Asleep)
