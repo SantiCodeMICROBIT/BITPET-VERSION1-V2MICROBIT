@@ -152,7 +152,7 @@ basic.forever(function () {
     if (hunger == 1) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.soaring), SoundExpressionPlayMode.InBackground)
     }
-    while (hunger < 0.1) {
+    while (hunger == 0.1) {
         basic.showLeds(`
             # . # . #
             . # . # .
@@ -169,7 +169,7 @@ basic.forever(function () {
     if (fun == 1) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.mysterious), SoundExpressionPlayMode.InBackground)
     }
-    while (fun < 0.1) {
+    while (fun == 0.1) {
         basic.showLeds(`
             # . # . #
             . # . # .
