@@ -152,17 +152,15 @@ basic.forever(function () {
     if (hunger == 1) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.soaring), SoundExpressionPlayMode.InBackground)
     }
-    if (hunger == 0) {
-        for (let index = 0; index < 1000; index++) {
-            basic.showLeds(`
-                # . # . #
-                . # . # .
-                # . # . #
-                . # # # .
-                . . . # .
-                `)
-            basic.pause(5000)
-        }
+    while (hunger < 0.1) {
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # # # .
+            . . . # .
+            `)
+        basic.pause(5000)
     }
 })
 basic.forever(function () {
@@ -171,16 +169,14 @@ basic.forever(function () {
     if (fun == 1) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.mysterious), SoundExpressionPlayMode.InBackground)
     }
-    if (fun == 0) {
-        for (let index = 0; index < 1000; index++) {
-            basic.showLeds(`
-                # . # . #
-                . # . # .
-                # . # . #
-                . # # # .
-                . . . # .
-                `)
-            basic.pause(5000)
-        }
+    while (fun < 0.1) {
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # # # .
+            . . . # .
+            `)
+        basic.pause(5000)
     }
 })
