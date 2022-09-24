@@ -141,18 +141,16 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
     basic.showIcon(IconNames.Asleep)
 })
-let fun = 0
+let fun = 10
 let hunger = 10
-input.setSoundThreshold(SoundThreshold.Loud, 197)
+let age = 0
+input.setSoundThreshold(SoundThreshold.Loud, 255)
 music.playSoundEffect(music.builtinSoundEffect(soundExpression.yawn), SoundExpressionPlayMode.InBackground)
 basic.showIcon(IconNames.Asleep)
 basic.forever(function () {
-    basic.pause(1000)
-    hunger += -0.1
-    if (hunger == 1) {
-        music.playSoundEffect(music.builtinSoundEffect(soundExpression.soaring), SoundExpressionPlayMode.InBackground)
-    }
-    while (hunger == 0.1) {
+    basic.pause(100000)
+    age += -1
+    while (age > 100) {
         basic.showLeds(`
             # . # . #
             . # . # .
@@ -169,7 +167,24 @@ basic.forever(function () {
     if (fun == 1) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.mysterious), SoundExpressionPlayMode.InBackground)
     }
-    while (fun == 0.1) {
+    while (fun < 0.1) {
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # # # .
+            . . . # .
+            `)
+        basic.pause(5000)
+    }
+})
+basic.forever(function () {
+    basic.pause(1000)
+    hunger += -0.1
+    if (hunger == 1) {
+        music.playSoundEffect(music.builtinSoundEffect(soundExpression.soaring), SoundExpressionPlayMode.InBackground)
+    }
+    while (hunger < 0.1) {
         basic.showLeds(`
             # . # . #
             . # . # .
